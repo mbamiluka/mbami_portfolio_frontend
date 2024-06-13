@@ -1,13 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap');
+*{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    justify-content: start;
+    align-items: flex-start;
+    border-style: none;
+    background-color: transparent;
+    font-size: 15px;
+    font-family: 'IBM Plex Mono',serif;
+    color: var(--text-color);
+    position: relative;
+    object-fit: fill;
+    z-index: 1;
+    box-sizing: border-box;
+}
+:root {
+  --background-color: #edeee8;
+  --text-color: #333;
+  --border-color: #d9dbd0;
+  --dwnl-bg-color: #fff;
+  --dwnl-text-color: #0e0e0e;
+}
+[data-theme="dark"] {
+  --background-color: #0e0e0e;
+  --text-color: #edeee8;
+  --border-color: #ffffff1a;
+  --dwnl-bg-color: #ffffff1a;
+  --dwnl-text-color: #000;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color); 
+  height: auto;
+  width: auto;
+  max-width: fit-content;
+  overflow-x: hidden;
+  padding-left: 20px;
+}
+.PageWrapper{
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+.PageWrapper .LeftContent{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: flex-start;
+  align-items: center;
+  width: 10%;
+  position: sticky;
+  top: 0;
+}
+.PageWrapper .textVertical{
+  transform: rotateZ(-90deg);
+  width: 100vh;
+  font-size: 64px;
+  color: var(--border-color);
+  font-family: 'Playfair Display',serif;
+  font-weight: 700;
+  padding-left: 40px;
+  padding-bottom: 60px;   
+}
+.PageWrapper .MainContent{
+  width:60%;
+  padding: 0vw 4vw 0vw 4vw;
+}
+.PageWrapper .RightContent{
+  width:30%;
+  height: 100%;
+  position: sticky;
+  top: 5px;
+  padding: 2vw 3vw 0vw 3vw;
+}
+.UpperSection{
+  padding-bottom: 40px;
+  padding-top: 49px;
+}
+h1{
+  font-family: 'Playfair Display',serif;
+  font-weight: 400;
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+h2{
+  font-family: 'Playfair Display',serif;
+  font-weight: 400;
+  font-size: 40px;
+  margin-bottom: 18px;
+}
+section{
+  margin-bottom: 70px;
+}
+section h2{
+  color:#333;
+  font-family: 'Playfair Display';
+  font-weight: normal;
+  margin-bottom: 50px;
+}
+p{
+  margin-bottom: 24px;
+  line-height: 30px;
+}
+section .HeroIntro{
+  padding: 60px 0px 40px 0px;
+}
+.HeroIntro h1{
+  margin-bottom: 40px;
+}
+.HeroIntroH1{
+  font-family: 'Playfair Display',serif;
+  font-weight: 400;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+.HeroIntro p{
+  font-family: 'IBM Plex Mono';
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 28px;
+}
+img{
+  display: inline;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+div .twoButtonGrid{
+  width: auto;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  grid-gap: 14px;
+  justify-items: stretch;
+  align-items: stretch;
+  
+}
+.twoButtonGrid button{
+  font-family: 'IBM Plex Mono',serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  height: 56px;
+  background-color: #71a882;
+  align-content: center;
+  justify-content: center;
+  padding: 0px 20px 0px 20px;
+  position: relative;
+  color: whitesmoke;
+
+}
+.progLangs{
+  display: grid;
+  align-items: center;
+  grid-template-columns: 30.3% 30.3% 30.3%;
+  grid-template-rows: auto auto;
+  row-gap: 30px;
+  column-gap: 25px;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #e1e3d9;
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#asDeg{
+  padding-top: 0%;
+}
+.progLang p{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-family: 'Playfair Display';
+
+}
+.Info p{
+  line-height: 28px;
+  color: rgb(99, 99, 99)
+}
+.aboutGrid{
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 18px;
+  row-gap: 2px;
+}
+.hobbies ul,.courses ul{
+  font-family: 'IBM Plex Mono';
+  color: #151515;
+  margin-left: 18px;
+  line-height: 28px;
+  padding-top: 10px;
+}
+.downloadWrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: -110px;
+  padding-right: 3px;
+  background-color: transparent;
+  width: 100%;
+  height: 56px;
+  z-index: 5;
+}
+#dwnlForm{
+  display: flex;
+  flex-direction: row;
+  background-color: var(--dwnl-bg-color);
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+#dwnlForm button{
+  font-family: 'IBM Plex Mono',serif;
+  padding-left: 7px;
+  padding-right: 7px;
+  color: var(--dwnl-text-color);
+}
+#dwnlForm img{
+  max-width: 20px;
+}
+.RightContent .Info{
+  margin-top: 50px;
+  width: 100%;
+}
+.contactBlck{
+  height: auto;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #71a882;
+}
+.contactBlck p{
+  height: 15px;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+.contactBlck a{
+  text-decoration: none;
+  color: #2e633f;
+  font-size: 13px;
+}
+.proficiencyGrid{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 20px;
+  row-gap: 14px;
+}
+.proficiencyGrid h5, .proficiencyGrid progress{
+  padding-top: 6%;
+}
+/*--------- progress bar ----------*/
+progress[value]::-webkit-progress-bar{
+  background-color: #d9dbd0;
+  height: 5px;
+  align-items: center;
+}
+progress[value]::-webkit-progress-value {
+  background-color: #71a882;
+}
+/*--------- fallback for progress bar ----------*/
+.progress-bar{
+  background-color: whiteSmoke;
+  border-radius: 2px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25) inset;
+
+  width: 250px;
+  height: 20px;
+
+  position: relative;
+  display: block;
+}
+.progress-bar > span{
+  background-color: blue;
+  border-radius: 2px;
+
+  display: block;
+  text-indent: -9999px;
+}
+.contactGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+input{
+    background-color: #e1e3d9;
+    margin-bottom: 30px;
+    height: 40px;
+    width: 80%
+}
+input[type=submit]{
+    background-color: #71a882;
+    color: #ffffff;
+    width: 50%;
+}
+textArea{
+  background-color: #e1e3d9;
+  margin-bottom: 35px;
+  width: 70%;
+}
+.msgAreaDiv{
+  grid-column: 1/span 2;
+}
+
+.workContainer{
+    border-style: solid;
+    border-color: #d9dbd0;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+.workContainer h3{
+    margin-bottom: 25px;
+}
+.threeColGrid{
+    display: grid;
+    grid-template-columns: 0.9fr 1.6fr 0.5fr;
+    column-gap: 25px;
+    align-items: center;
+}
+.threeColGrid p{
+    text-align: justify;
+}
+.projectLinks{
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+}
+.projectLinks a{
+    margin-right: 10px;
+}
+/*--------- footer styles ----------*/
+.footer .links
+{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 25px;
+}
+.links a{
+    margin-right: 6.8%;
+    text-decoration: none;
+}
+.footer p{
+    font-size: 10.8px;
+    color: #333;
+}
+.footer{
+    padding-top: 20px;
+    margin-bottom: -50px;
+    border-top-style: solid;
+    border-width: 1.9px;
+    border-color: #d9dbd0;
+    width: 80%;
+}
+
+/*------------------------- Mobile Portrait --------------------------------*/
+@media only screen 
+and (min-device-width: 320px) 
+and (orientation: portrait) {
+
+    body .PageWrapper {
+        max-width: 100%; 
+        display: flex; 
+        flex-direction: column;
+        align-content: stretch;
+        position: relative;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .PageWrapper .LeftContent{
+        display: none;
+    }
+
+    .PageWrapper .RightContent{
+        display: block;
+        position: relative;
+        width: 100%;
+        order: 1;
+        padding: 2vw 0vw 0vw 0vw;
+    }
+    .PageWrapper .MainContent{
+        order: 2;
+        align-self: center;
+        width: 100%;
+        padding: 0vw 1vw 0vw 1vw;
+    }
+    .aboutGrid{
+        grid-template-columns: 1fr;
+        row-gap: 15px;
+    }
+    .threeColGrid{
+        grid-template-columns: 1fr;
+       
+    }
+    .workContainer{
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .progLangs{
+        display: grid;
+        align-items: center;
+        grid-template-columns: 50% 50%;
+        
+        row-gap: 30px;
+        column-gap: 20px;
+        padding-top: 28px;
+        padding-bottom: 28px;
+        padding-left: 15px;
+        padding-right: 15px;
+        background-color: #e1e3d9;
+        text-align: center;
+    }
+    #schName{
+        grid-row: 1;
+        grid-column: 2;
+    }
+    #schName2{
+        grid-row: 2;
+        grid-column: 2;
+    }
+    #schName3{
+        grid-row: 3;
+        grid-column: 2;
+    }
 }
