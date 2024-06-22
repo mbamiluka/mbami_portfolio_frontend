@@ -15,18 +15,23 @@
     box-sizing: border-box;
 }
 :root {
-  --background-color: #edeee8;
+  --background-color: #eff0e9;
   --text-color: #333;
+  --menu-bg-color: #eff0e9;
   --border-color: #d9dbd0;
   --dwnl-bg-color: #fff;
   --dwnl-text-color: #0e0e0e;
+  --shadow-color: #0000001f;
 }
 [data-theme="dark"] {
   --background-color: #0e0e0e;
-  --text-color: #edeee8;
+  --text-color: #c9cac5;
+  --menu-bg-color: #1f1e1e;
   --border-color: #ffffff1a;
-  --dwnl-bg-color: #ffffff1a;
+  --dwnl-bg-color: #c9cac5;
+  
   --dwnl-text-color: #000;
+  --shadow-color: #0000001a;
 }
 body {
   -webkit-font-smoothing: antialiased;
@@ -79,17 +84,113 @@ body {
   padding-bottom: 40px;
   padding-top: 49px;
 }
+nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  margin: 3vw;
+  background-color: var(--menu-bg-color);
+  box-shadow: 0px 8px 23px 0px var(--shadow-color);
+  z-index: 8;
+}
+nav.inactive{
+  background-color: transparent;
+  box-shadow: none;
+  transition: 0.45 ease;
+  border-radius: 50%;
+}
+.navMenu{
+  /*This is the menu that appears when the menu button is clicked*/
+  padding: 8px 0px 8px 0px;
+  height: 100%;
+}
+.navMenu.inactive{
+  display: none;
+  opacity: 0;
+  transition: opacity 2.85s ease;
+  padding: 0px;
+}
+.menuButton{
+  margin: 6px 16px 6px 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 7;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.menuButton.inactive{
+  background-color: transparent;
+  margin: 0px;
+}
+.menuButton.hover{
+  border-style: solid;
+  transition: 0.45s;
+  border-color: var(--border-color)
+}
+.menuIcon{
+  display: block;
+  width: 36px;
+  height: 36px;
+  padding: 4px;
+  box-sizing: border-box;
+}
+.bar1, .bar2, .bar3{
+  width: 25px;
+  height: 2.3px;
+  background-color: var(--text-color);
+  margin: 6.2px 0;
+  transition: 0.45s;
+}
+.bar1.active {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.bar2.active {
+  opacity: 0;
+}
+.bar3.active {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.navLinks{
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+  margin-right: 28px;
+  height: 48px;
+  align-items: center;
+}
+.navLinks a{
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  margin: 2px 14px 2px 14px;
+  padding: 0px 2px;
+  font-size: 13px;
+
+}
 h1{
   font-family: 'Playfair Display',serif;
   font-weight: 400;
   font-size: 40px;
-  margin-bottom: 16px;
+  margin-bottom: 30px;
+  color: var(--text-color);
 }
 h2{
   font-family: 'Playfair Display',serif;
   font-weight: 400;
   font-size: 40px;
   margin-bottom: 18px;
+}
+a{
+  text-decoration: none;
+  color: #0b6d2a;
+  font-weight: bold;
+
 }
 section{
   margin-bottom: 70px;
@@ -101,7 +202,7 @@ section h2{
   margin-bottom: 50px;
 }
 p{
-  margin-bottom: 24px;
+  /*margin-bottom: 24px;*/
   line-height: 30px;
 }
 section .HeroIntro{
@@ -165,6 +266,67 @@ div .twoButtonGrid{
   padding-right: 15px;
   background-color: #e1e3d9;
   text-align: center;
+}
+
+.skills, .tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skillItem, .tag{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-color: var(--border-color);
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+.skillItem p{
+  margin: 0px;
+  font-size: 12.5px;
+}
+.skillItem p.yoe{
+  color: var(--text-color);
+  margin: 0px 0px 0px 5px;
+}
+.experienceItem{
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 15px;
+}
+
+.timeline{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--border-color);
+  width: 2px;
+  height: 90%;
+  align-items: center;
+}
+.timeline .circle{
+  border-radius: 50px;
+  border-color: #71a882;
+  border-style: solid;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+}
+.timeline .coloredLine {
+  background-color: #71a882;
+  width: 3px;
+  height: 35%;
+  position: absolute;
+  margin-top: 20px;
+}
+
+.experienceItem .right{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 60px;
 }
 
 #asDeg{
@@ -311,7 +473,7 @@ textArea{
 
 .workContainer{
     border-style: solid;
-    border-color: #d9dbd0;
+    border-color: var(--border-color);
     padding-left: 15px;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -353,12 +515,15 @@ textArea{
     color: #333;
 }
 .footer{
-    padding-top: 20px;
-    margin-bottom: -50px;
+    padding: 20px 0px 20px 0px;
     border-top-style: solid;
     border-width: 1.9px;
-    border-color: #d9dbd0;
+    border-color: var(--border-color);
     width: 80%;
+}
+
+.footer a{
+    color: var(--text-color) !important;
 }
 
 /*------------------------- Mobile Portrait --------------------------------*/
@@ -392,6 +557,9 @@ and (orientation: portrait) {
         align-self: center;
         width: 100%;
         padding: 0vw 1vw 0vw 1vw;
+    }
+    nav{
+      margin-left: 1vw;
     }
     .aboutGrid{
         grid-template-columns: 1fr;

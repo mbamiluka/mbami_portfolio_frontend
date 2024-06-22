@@ -6,7 +6,10 @@ import LeftContent from '../components/organisms/LeftContent';
 import MainContent from '../components/organisms/MainContent';
 import RightContent from '../components/organisms/RightContent';
 import Intro from '../components/atoms/Intro';
-import Proficiencies from '../components/organisms/Proficiencies';
+import Skills from '../components/organisms/Skills';
+import Education from '../components/organisms/Education';
+import Experiences from '../components/organisms/Experiences';
+import Projects from '../components/organisms/Projects';
 
 
 function HomePage() {
@@ -15,7 +18,10 @@ function HomePage() {
             <LeftContent />
             <MainContent>
                 <Intro />
-                <Proficiencies />
+                <Experiences />
+                <Education />
+                <Skills />
+                <Projects />
             </MainContent>
             <RightContent />
         </PageWrapper>

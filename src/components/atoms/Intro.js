@@ -19,8 +19,9 @@ const Intro = () => {
                 className="HeroIntroH1"
             />
             <p className="HeroIntro p" >
-                Having undergone a Bachelors in computer science,
-                I'm proficient with algorithms, data structures, Operating Systems, Prob & Stats, etc.
+                This site was fully programmed by me - Everything including 
+                frontend, backend & devops. 
+                See <a href="">SOURCE CODE</a> docs for @author.
             </p>
         </section>
          
