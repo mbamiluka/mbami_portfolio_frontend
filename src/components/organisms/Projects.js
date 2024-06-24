@@ -9,7 +9,7 @@ const Projects = ({ project }) => {
                 <ProjectItem key={index} project={project} />
             ))}
             <div style={{textAlign:"center"}}>
-              <a href="pages/works.html">SEE ALL</a>
+              <a href="/project">SEE ALL</a>
             </div>
         </section>
     );
@@ -19,27 +19,57 @@ export default Projects;
 
 const projects = [
     {
-      id: 1,
-      title: "Personal Portfolio Website",
-      logo: "https://via.placeholder.com/150",
-      descr: "A personal portfolio website to showcase my work and skills.",
-      technologies: ["HTML", "CSS", "JavaScript", "React"],
-      link: "http://example.com/portfolio"
+        id: 1,
+        title: "Dandle",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut urna nec purus mollis malesuada. Nullam in purus auctor, ultrices odio nec, tincidunt nunc. Nullam ut mi sit amet nunc aliquam imperdiet.",
+        role: "Fullstack Engineer",
+        skills: ["React", "Node.js", "Express", "MongoDB"],
+        company: "Google",
+        link: "https://www.google.com",
+        logo: "https://via.placeholder.com/150",
     },
     {
-      id: 2,
-      logo: "https://via.placeholder.com/150",
-      title: "E-commerce Platform",
-      descr: "An e-commerce platform built for a local retailer to sell products online.",
-      technologies: ["Node.js", "Express", "MongoDB", "React"],
-      link: "http://example.com/ecommerce"
+        id: 2,
+        title: "Dandle",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut urna nec purus mollis malesuada. Nullam in purus auctor, ultrices odio nec, tincidunt nunc. Nullam ut mi sit amet nunc aliquam imperdiet.",
+        role: "Fullstack Engineer",
+        skills: ["React", "Node.js", "Express", "MongoDB"],
+        company: "Google",
+        link: "https://www.google.com",
+        logo: "https://via.placeholder.com/150",
     },
     {
-      id: 3,
-      title: "Social Media Dashboard",
-      logo: "https://via.placeholder.com/150",
-      descr: "A dashboard to track social media metrics and performance.",
-      technologies: ["Python", "Flask", "SQL", "React"],
-      link: "http://example.com/dashboard"
-    }
-];
+        id: 3,
+        title: "Dandle",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut urna nec purus mollis malesuada. Nullam in purus auctor, ultrices odio nec, tincidunt nunc. Nullam ut mi sit amet nunc aliquam imperdiet.",
+        role: "Fullstack Engineer",
+        skills: ["React", "Node.js", "Express", "MongoDB"],
+        company: "Google",
+        link: "https://www.google.com",
+        logo: "https://via.placeholder.com/150",
+    },
+    {
+        id: 4,
+        title: "Dandle",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut urna nec purus mollis malesuada. Nullam in purus auctor, ultrices odio nec, tincidunt nunc. Nullam ut mi sit amet nunc aliquam imperdiet.",
+        role: "Fullstack Engineer",
+        skills: ["React", "Node.js", "Express", "MongoDB"],
+        company: "Google",
+        link: "https://www.google.com",
+        logo: "https://via.placeholder.com/150",
+    },
+    {
+        id: 5,
+        title: "Dandle",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut urna nec purus mollis malesuada. Nullam in purus auctor, ultrices odio nec, tincidunt nunc. Nullam ut mi sit amet nunc aliquam imperdiet.",
+        role: "Fullstack Engineer",
+        skills: ["React", "Node.js", "Express", "MongoDB"],
+        company: "Google",
+        link: "https://www.google.com",
+        logo: "https://via.placeholder.com/150",
+    },
+  ];
+
+  let fullDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut urna nec purus mollis malesuada. Nullam in purus auctor";
+  fullDescription += ", ultrices odio nec, tincidunt nunc. Nullam ut mi sit amet nunc aliquam imperdiet";
+  fullDescription += ". Nullam ut mi sit amet nunc aliquam imperdiet. Nullam ut mi sit amet nunc aliquam imperdiet. Nullam ut mi sit amet nunc aliquam imperdiet";

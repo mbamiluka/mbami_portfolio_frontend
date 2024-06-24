@@ -10,6 +10,7 @@ import Skills from '../components/organisms/Skills';
 import Education from '../components/organisms/Education';
 import Experiences from '../components/organisms/Experiences';
 import Projects from '../components/organisms/Projects';
+import SideImage from '../components/atoms/SideImage';
 
 
 function HomePage() {
@@ -23,7 +24,9 @@ function HomePage() {
                 <Skills />
                 <Projects />
             </MainContent>
-            <RightContent />
+            <RightContent>
+                <SideImage />
+            </RightContent>
         </PageWrapper>
     );
 }

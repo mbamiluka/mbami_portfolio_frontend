@@ -11,6 +11,8 @@ const Tags = ({tags}) => {
   );
 }
 
+export default Tags;
+
 const sampleData = [
     {
       name: "JavaScript",

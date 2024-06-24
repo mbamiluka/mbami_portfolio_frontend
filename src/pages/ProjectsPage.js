@@ -1,18 +1,22 @@
 import React from "react";
+import PageWrapper from "../components/organisms/PageWrapper";
 import LeftContent from "../components/organisms/LeftContent";
 import RightContent from "../components/organisms/RightContent";
 import MainContent from "../components/organisms/MainContent";
+import Projects from "../components/organisms/Projects";
+import SideImage from "../components/atoms/SideImage";
 
 const ProjectsPage = () => {
     return (
-        <div className='projectsPage'>
+        <PageWrapper>
             <LeftContent/>
             <MainContent>
-                <h2>Projects</h2>
-                full list of projects
+                <Projects/>
             </MainContent>
-            <RightContent/>
-        </div>
+            <RightContent>
+                <SideImage/>
+            </RightContent>
+        </PageWrapper>
     );
 }
 

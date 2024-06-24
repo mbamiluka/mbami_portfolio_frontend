@@ -4,6 +4,7 @@ import bulbOn from './assets/bulb-on.svg';
 import HomePage from './pages/HomePage';
 import ExperiencePage from './pages/ExperiencePage';
 import ProjectsPage from './pages/ProjectsPage';
+import ProjectDetailsPage from './pages/ProjectDetailsPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { ThemeContext } from './contexts/ThemeContext';
@@ -22,6 +23,7 @@ function App() {
           <Route path='/' element={<HomePage />} />
           <Route path='/experience' element={<ExperiencePage />} />
           <Route path='/project' element={<ProjectsPage />} />
+          <Route path='/project/:id' element={<ProjectDetailsPage />} />
       </Routes>
     </Router>
   );
