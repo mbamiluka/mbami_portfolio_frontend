@@ -39,31 +39,15 @@ const ProjectDetailsPage = () => {
         <PageWrapper>
             <LeftContent/>
             <MainContent>
-                <h2>{project.title}</h2>
+                <h2>{project.name}</h2>
                 <p>{project.description}</p>
             </MainContent>
             <RightContent>
                 <ProjectSideBarDetails project={project}/>
-                <Tags tags={project.skills}/>
+                <Tags tags={project.projectSkills}/>
             </RightContent>
         </PageWrapper>
     );
 }
 
 export default ProjectDetailsPage;
-
-let description = "Lorem ipsum dolor sit amet, consectetur" 
-description += "adipiscing elit. Sed ut urna nec purus"
-description += "mollis malesuada. Nullam in purus auctor, "
-description += "ultrices odio nec, tincidunt nunc. Nullam "
-description += "ut mi sit amet nunc aliquam imperdiet. "
-
-const sampleProject = {
-    id: 1,
-    title: "Dandle",
-    description: description,
-    role: "Fullstack Engineer",
-    company: "Self",
-    skills: ["React", "JavaScript", "java", "Responsive Design",
-        "HTML", "CSS", "MySQL", "Normalization" ]
-}
