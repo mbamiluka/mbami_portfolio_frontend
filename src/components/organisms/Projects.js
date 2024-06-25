@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import ProjectItem from "../molecules/ProjectItem";
 import Loading from "../atoms/Loading";
 
+const api = process.env.REACT_APP_MBAMI_PORTFOLIO_BACKEND_URL_DEVELOPMENT;
+
 const Projects = () => {
   const [projects, setProjects] = useState([]);
 

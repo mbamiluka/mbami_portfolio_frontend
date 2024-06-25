@@ -1,10 +1,30 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import ExperienceItem from "../molecules/ExperienceItem";
 
-const Experiences = ({ experience }) => {
+const apiUrl = process.env.REACT_APP_MBAMI_PORTFOLIO_BACKEND_URL_DEVELOPMENT;
+
+const Experiences = () => {
+    const [experiences, setExperiences] = useState([]);
+
+    try {
+        useEffect(() => {
+            const fetchExperiences = async () => {
+                const response = await fetch(`${apiUrl}/api/v1/experience`);
+                const data = await response.json();
+                setExperiences(data);
+                console.log(data);
+            };
+
+            fetchExperiences();
+        }, []);
+    } catch (error) {
+        console.log(error);
+    }
+
     return (
         <section>
             <h1 className="Heading">Experience</h1>
+            <p>url: {apiUrl}</p>
             {experiences.map((experience, index) => (
                 <ExperienceItem key={index} experience={experience} />
             ))}
@@ -15,7 +35,7 @@ const Experiences = ({ experience }) => {
 export default Experiences;
 
 //test data
-const experiences = [
+const sampleExperiences = [
     {
         start: "2018",
         end: "2020",
