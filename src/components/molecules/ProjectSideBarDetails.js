@@ -1,12 +1,25 @@
 import React from "react";
+import LiveLink from "../atoms/LiveLink";
+import Status from "../atoms/Status";
+import SourceCode from "../atoms/SourceCode";
 
 const ProjectSideBarDetails = ({project}) => {
+    const statusColors = {
+        ongoing: 'orange',
+        completed: 'green',
+        abandoned: 'red',
+        starting: 'orange',
+        default: 'grey'
+    };
+
     return (
         <div className='projectSideBarDetails'>
-            <p>Associated with: {project.company}</p>
-            <p>Role: {project.role}</p>
-            <a href={project.link} target="_blank" rel="noreferrer">Live Demo</a>
-
+            <div>
+                <p>Associated with: {project.projectInstitution}</p>
+                <p>Role: {project.role}</p>
+            </div>
+            <LiveLink link={project.demo}/>
+            <Status project={project}/>
         </div>
     );
 }

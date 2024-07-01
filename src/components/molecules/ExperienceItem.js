@@ -1,4 +1,5 @@
 import React from "react";
+import ExpRole from "../atoms/ExpRole";
 
 const ExperienceItem = ({ experience }) => {
     return (
@@ -6,7 +7,7 @@ const ExperienceItem = ({ experience }) => {
             <div className="left">
                 <p>
                 {new Date(experience.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })} - 
-                {new Date(experience.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                {new Date(experience.endDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
                 </p>
                 <img src={experience.logo} 
                     style={{ width: "60px" }}
@@ -17,8 +18,10 @@ const ExperienceItem = ({ experience }) => {
                 <div className="coloredLine"></div>
             </div>
             <div className="right">
-                <h3>{experience.institution}</h3>
-                <p>{experience.role}</p>
+                <p>{experience.institution}</p>
+                {experience.expRoles && Array.isArray(experience.expRoles) && experience.expRoles.map((role, index) => (
+                    <ExpRole key={index} role={role} />
+                ))}
                 <p>{experience.achievements}</p>
             </div>
         </div>

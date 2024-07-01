@@ -9,9 +9,10 @@ const Projects = () => {
 
   useEffect(() => {
     const fetchProjects = async () => {
-      const response = await fetch("/api/projects");
+      const response = await fetch(`${api}/api/v1/project`);
       const data = await response.json();
       setProjects(data);
+      console.log(data);
     };
 
     fetchProjects();
@@ -20,8 +21,8 @@ const Projects = () => {
   return (
       <section>
           <h1 className="Heading">Projects</h1>
-          {sampleProjects.map((sampleProject, index) => (
-              <ProjectItem key={index} project={sampleProject} />
+          {projects.map((project, index) => (
+              <ProjectItem key={index} project={project} />
           ))}
           <div style={{textAlign:"center"}}>
             <a href="/project">SEE ALL</a>

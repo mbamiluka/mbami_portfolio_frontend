@@ -12,7 +12,7 @@ const Experiences = () => {
                 const response = await fetch(`${apiUrl}/api/v1/experience`);
                 const data = await response.json();
                 setExperiences(data);
-                console.log(data);
+                console.log(data); // REMEMBER TO REMOVE THIS!!!
             };
 
             fetchExperiences();
@@ -24,7 +24,6 @@ const Experiences = () => {
     return (
         <section>
             <h1 className="Heading">Experience</h1>
-            <p>url: {apiUrl}</p>
             {experiences.map((experience, index) => (
                 <ExperienceItem key={index} experience={experience} />
             ))}

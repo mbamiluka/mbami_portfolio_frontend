@@ -22,6 +22,9 @@
   --dwnl-bg-color: #fff;
   --dwnl-text-color: #0e0e0e;
   --shadow-color: #0000001f;
+  --orange-color: #ff7f50;
+  --green-color: #71a882;
+  --red-color: #ff6347;
 }
 [data-theme="dark"] {
   --background-color: #0e0e0e;
@@ -74,13 +77,16 @@ body {
   padding: 0vw 4vw 0vw 4vw;
 }
 .PageWrapper .RightContent{
-  width:30%;
+  width:35%;
   height: 100%;
   position: sticky;
   top: 5px;
   padding: 2vw 3vw 0vw 3vw;
 }
-
+.sidePic{
+  margin-bottom: 20px;
+  width:95%;
+}
 .UpperSection{
   padding-bottom: 40px;
   padding-top: 49px;
@@ -273,6 +279,7 @@ div .twoButtonGrid{
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: 20px;
 }
 
 .skillItem, .tag{
@@ -281,18 +288,24 @@ div .twoButtonGrid{
   align-items: center;
   border-color: var(--border-color);
   border-style: solid;
-  border-width: 2px;
-  border-radius: 20px;
-  padding: 3px 10px;
+  border-width: 1.8px;
+  border-radius: 15px;
+  padding: 0.5px 10px;
+  font-size: 4px;
 }
 .skillItem p{
   margin: 0px;
-  font-size: 12.5px;
+  font-size: 12.75px;
+}
+.tag p{
+  margin: 0px;
+  font-size: 12px;
 }
 .skillItem p.yoe{
   color: var(--text-color);
   margin: 0px 0px 0px 5px;
 }
+
 .experienceItem{
   display: grid;
   grid-template-columns: auto auto 1fr;
@@ -364,6 +377,7 @@ div .twoButtonGrid{
   justify-content: flex-end;
   align-items: center;
   margin-top: -110px;
+  margin-left: -4%;
   padding-right: 3px;
   background-color: transparent;
   width: 100%;
@@ -416,6 +430,9 @@ div .twoButtonGrid{
   padding: 20px 40px 20px 15px;
   margin: 0px 20px 20px 0px;
 }
+.projectSideBarDetails>a{
+  margin: 12px 0px 12px 0px;
+}
 .proficiencyGrid{
   display: grid;
   grid-template-columns: auto auto auto;
@@ -425,9 +442,47 @@ div .twoButtonGrid{
 .proficiencyGrid h5, .proficiencyGrid progress{
   padding-top: 6%;
 }
+.liveDemoLink{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+}
+.blinker {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: rgb(228, 82, 82);
+  display: inline-block;
+  margin-left: 9px;
+  animation: blinkAnimation 1s infinite;
+}
+.status{
+  display: flex;
+  flex-direction: row;  
+  height: 20px;
+  margin: 15px 0px;
+}
+.status p{
+  margin: 0px;
+  border-radius: 10px;
+  padding: 0px;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+p.statusAdditionalText{
+  color: var(--text-color);
+  width: auto;
+  margin-left: 8px;
+}
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+@keyframes blinkAnimation {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
 /*--------- progress bar ----------*/
 progress[value]::-webkit-progress-bar{
@@ -507,6 +562,7 @@ textArea{
     grid-template-columns: 0.9fr 1.6fr 0.5fr;
     column-gap: 25px;
     align-items: center;
+    margin-bottom: 16px;
 }
 .threeColGrid p{
     text-align: justify;
