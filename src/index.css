@@ -96,10 +96,14 @@ nav{
   flex-direction: row;
   align-items: center;
   position: fixed;
-  margin: 3vw;
+  margin:  -1vw 3vw 0vw -1.75vw;
   background-color: var(--menu-bg-color);
   box-shadow: 0px 8px 23px 0px var(--shadow-color);
   z-index: 8;
+}
+nav.hide {
+  top: -50px;
+  transition: top 0.3s;
 }
 nav.inactive{
   background-color: transparent;
