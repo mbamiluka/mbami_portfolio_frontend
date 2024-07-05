@@ -10,6 +10,7 @@ import Loading from "../components/atoms/Loading";
 import ProjectDetails from "../components/molecules/ProjectDetails";
 import ProjectSideBarDetails from "../components/molecules/ProjectSideBarDetails";
 import SourceCode from "../components/atoms/SourceCode";
+import ProjectDescription from "../components/molecules/ProjectDescription";
 
 const apiUrl = process.env.REACT_APP_MBAMI_PORTFOLIO_BACKEND_URL_DEVELOPMENT;
 
@@ -44,7 +45,7 @@ const ProjectDetailsPage = () => {
             <LeftContent/>
             <MainContent>
                 <h2>{project.name}</h2>
-                <p>{project.description}</p>
+                <ProjectDescription contents={project.projectContents}/>
             </MainContent>
             <RightContent>
                 <ProjectSideBarDetails project={project}/>

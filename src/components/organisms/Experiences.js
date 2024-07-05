@@ -12,7 +12,6 @@ const Experiences = () => {
                 const response = await fetch(`${apiUrl}/api/v1/experience`);
                 const data = await response.json();
                 setExperiences(data);
-                console.log(data); // REMEMBER TO REMOVE THIS!!!
             };
 
             fetchExperiences();
