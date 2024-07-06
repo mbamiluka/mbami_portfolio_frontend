@@ -95,15 +95,15 @@ nav{
   display: flex;
   flex-direction: row;
   align-items: center;
-  position: fixed;
-  margin:  -1vw 3vw 0vw -1.75vw;
+  /* position: fixed; */
+  margin-top: -20px;
   background-color: var(--menu-bg-color);
   box-shadow: 0px 8px 23px 0px var(--shadow-color);
   z-index: 8;
 }
 nav.hide {
   top: -50px;
-  transition: top 0.3s;
+  transition: top 2s ease;
 }
 nav.inactive{
   background-color: transparent;
@@ -138,7 +138,7 @@ nav.inactive{
   background-color: transparent;
   margin: 0px;
 }
-.menuButton.hover{
+.menuButton:hover{
   border-style: solid;
   transition: 0.45s;
   border-color: var(--border-color)
@@ -183,6 +183,27 @@ nav.inactive{
   padding: 0px 2px;
   font-size: 13px;
 
+}
+.utilBar{
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  margin: 5% 0px 0px 1%;
+  z-index: 9;
+  top:0;
+  transition: 0.45s;
+}
+.utilBar.hide{
+  top: -150px;
+  transition: top 2s ease;
+}
+.darkModeSwitch{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 70px;
+  margin-right: 10px;
+  background-color: transparent;
 }
 h1{
   font-family: 'Playfair Display',serif;
