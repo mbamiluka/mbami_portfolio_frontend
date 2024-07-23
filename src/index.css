@@ -195,7 +195,7 @@ nav.inactive{
 }
 .utilBar.hide{
   top: -150px;
-  transition: top 2s ease;
+  transition: top 1.5s ease;
 }
 .darkModeSwitch{
   display: flex;
@@ -270,6 +270,23 @@ div .twoButtonGrid{
   justify-items: stretch;
   align-items: stretch;
   
+}
+ul{
+  padding-left: 18px;
+  margin-top: 10px;
+}
+ul .Collapsible li{
+  list-style-type: customMarker;
+  margin-top: 10px;
+}
+ul .Collapsible li:hover{
+  color: #71a882;
+  cursor: pointer;
+}
+
+@counter-style customMarker {
+  symbols: "+";
+  suffix: " ";
 }
 .twoButtonGrid button{
   font-family: 'IBM Plex Mono',serif;
