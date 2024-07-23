@@ -7,8 +7,8 @@ import MainContent from '../components/organisms/MainContent';
 import RightContent from '../components/organisms/RightContent';
 import Intro from '../components/atoms/Intro';
 import Skills from '../components/organisms/Skills';
-import Education from '../components/organisms/Education';
-import Experiences from '../components/organisms/Experiences';
+import WorkExperiences from '../components/organisms/WorkExperiences';
+import EducationExperiences from '../components/organisms/EducationExperiences';
 import Projects from '../components/organisms/Projects';
 import SideImage from '../components/atoms/SideImage';
 
@@ -19,8 +19,8 @@ function HomePage() {
             <LeftContent />
             <MainContent>
                 <Intro />
-                <Experiences />
-                <Education />
+                <WorkExperiences />
+                <EducationExperiences />
                 <Skills />
                 <Projects />
             </MainContent>

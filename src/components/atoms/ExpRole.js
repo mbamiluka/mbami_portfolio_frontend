@@ -1,14 +1,12 @@
 import React from "react";
+import Collapsible from "react-collapsible";
+import Achievements from "../molecules/Achievements";
 
 const ExpRole = ({ role }) => {
     return (
         <div className="expRole">
             <h3>{role.name}</h3>
-            <ul>
-                {role.expRoleAchievements.map((achievement, index) => (
-                    <li key={index}>{achievement}</li>
-                ))}
-            </ul>
+            <Achievements achievements={role.expRoleAchievements} />
         </div>
     );
 }
