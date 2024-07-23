@@ -1,7 +1,13 @@
 import React from "react";
 import ExperienceItem from "../molecules/ExperienceItem";
+import useGetExperiences from "../../hooks/useGetExperience";
+import Loading from "../atoms/Loading";
 
-const Education = ({ experience }) => {
+const EducationExperiences = ({ experience }) => {
+    const { experiences, loading, error } = useGetExperiences("education");
+
+    if(loading) return <Loading />
+    if(error) return <div>Error...</div>
     return (
         <section>
             <h1 className="Heading">Education</h1>
@@ -12,7 +18,7 @@ const Education = ({ experience }) => {
     );
 }
 
-export default Education;
+export default EducationExperiences;
 
 //test data (list of schools attended)
 const experiences = [
