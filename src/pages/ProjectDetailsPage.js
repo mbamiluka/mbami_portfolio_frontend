@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import PageWrapper from "../components/organisms/PageWrapper";
 import LeftContent from "../components/organisms/LeftContent";
 import RightContent from "../components/organisms/RightContent";
 import MainContent from "../components/organisms/MainContent";
-import Tag from "../components/atoms/Tag";
 import Tags from "../components/molecules/Tags";
 import Loading from "../components/atoms/Loading";
 import ProjectDetails from "../components/molecules/ProjectDetails";
@@ -23,7 +22,6 @@ const ProjectDetailsPage = () => {
                 const response = await fetch(`${apiUrl}/api/v1/project/${id}`);
                 const data = await response.json();
                 setProject(data);
-                console.log(data);
             };
     
             fetchProjectDetails();
@@ -39,6 +37,7 @@ const ProjectDetailsPage = () => {
             </PageWrapper>
         )
     }
+    console.log(project);
 
     return (
         <PageWrapper>

@@ -15,8 +15,11 @@ const ProjectSideBarDetails = ({project}) => {
     return (
         <div className='projectSideBarDetails'>
             <div>
-                <p>Associated with: {project.projectInstitution}</p>
-                <p>Role: {project.role}</p>
+                <p>Associated with: {project.projectExperience.institution}</p>
+                <p>Role:</p>
+                {project.projectExpRoles.map((role, index) => {
+                    return <p key={index}>{role.role}</p>
+                })}
             </div>
             <LiveLink link={project.demo}/>
             <Status project={project}/>

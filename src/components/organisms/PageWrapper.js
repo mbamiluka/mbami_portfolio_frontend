@@ -16,7 +16,7 @@ function PageWrapper({ children }) {
                     checked={theme === 'dark'}
                     onChange={toggleTheme}
                     size={24}
-                    color={checked => (checked ? '#333' : '#fff')}
+                    //color={checked => (checked ? '#333' : '#fff')}
                     className='darkModeSwitch'
                 />
                 <NavBar

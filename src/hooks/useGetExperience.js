@@ -10,12 +10,14 @@ const useGetExperiences = (type) => {
 	useEffect(() => {
 		const fetchExperiences = async () => {
 			try {
-				const response = await fetch(`${apiUrl}/api/v1/experience?type=${type}`);
+				const response = await fetch(`${apiUrl}/api/v1/experience?expType=${type}`);
 				if (!response.ok) {
 					throw new Error("Network response was not ok");
 				}
 				const data = await response.json();
 				setExperiences(data);
+				console.log(data);
+				console.log(`${apiUrl}/api/v1/experience?expType=${type}`);
 			} catch (error) {
 				setError(error);
 			} finally {
