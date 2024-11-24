@@ -17,8 +17,8 @@ const ProjectSideBarDetails = ({project}) => {
             <div>
                 <p>Associated with: {project.projectExperience.institution}</p>
                 <p>Role:</p>
-                {project.projectExpRoles.map((role, index) => {
-                    return <p key={index}>{role.role}</p>
+                {project.projectExperience.expRoles.map((role, index) => {
+                    return <p key={index}>{role.name}</p>
                 })}
             </div>
             <LiveLink link={project.demo}/>

@@ -5,7 +5,7 @@ const ProjectDescription = ({ contents }) => {
         <div>
             {contents.map((contentObj, index) => {
                 switch (contentObj.contentType) {
-                    case 'Text':
+                    case 'text':
                         return <p key={index}>{contentObj.content}</p>;
                     case 'image':
                         return <img key={index} src={contentObj.content} alt={contentObj.alt}/>;

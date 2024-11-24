@@ -7,9 +7,21 @@ const AddExperience = () => {
     const [selectedExpType, setSelectedExpType] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/v1/expType')
+        fetch('http://localhost:8080/api/v1/expTypes', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+
+            },
+        })
         .then(response => response.json())
-        .then(data => setExpTypes(data));
+        .then(data => {
+            setExpTypes(data);
+        }
+        )
+        .catch(err => {
+            console.log(err);
+        });
     }, []);
 
     const handleExpTypeChange = (selectedExpType) => {

@@ -13,6 +13,7 @@ import Loading from "../components/atoms/Loading";
 import ProjectDetails from "../components/molecules/ProjectDetails";
 import AddExperience from "../components/molecules/AddExperience";
 import AddAchievement from "../components/molecules/AddAchievement";
+import ContentEditor from "../components/organisms/ContentEditor";
 
 
 const AdminHomePage = () => {
@@ -28,6 +29,7 @@ const AdminHomePage = () => {
                 <AddExpRole/>
                 <AddProject/>
                 <AddAchievement/>
+                <ContentEditor/>
             </MainContent>
             <RightContent>
                 <Tags tags={["Admin", "Home", "Page"]}/>
