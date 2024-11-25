@@ -1,0 +1,67 @@
+.App {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: background 1s;
+}
+
+.light-on {
+  background: #ebd1a4;
+}
+
+.light-off {
+  background: #222;
+}
+
+.bulb {
+  width: 50px;
+  height: 50px;
+  background: #000;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+.filament {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.filament-on {
+  opacity: 1;
+}
+
+.shine {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #fff, transparent);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.shine-on {
+  opacity: 0.5;
+}
+
+.switch {
+  margin-top: 50px;
+  padding: 10px 20px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
