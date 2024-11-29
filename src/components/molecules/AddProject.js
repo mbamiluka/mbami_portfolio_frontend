@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 import Tag from '../atoms/Tag';
+import API_ENDPOINTS from '../../config/api';
 
 const AddProject = () => {
     const [skills, setSkills] = useState([]);
@@ -22,10 +23,10 @@ const AddProject = () => {
         const fetchData = async () => {
             try {
                 const [skillsResponse, categoriesResponse, expResponse, expRoleResp] = await Promise.all([
-                    fetch('http://localhost:8080/api/v1/skills', { method: 'GET', Authorization: `Bearer ${token}` }),
-                    fetch('http://localhost:8080/api/v1/skillCategory', { method: 'GET' }),
-                    fetch('http://localhost:8080/api/v1/experience', { method: 'GET' }),
-                    fetch('http://localhost:8080/api/v1/expRole', { method: 'GET' })
+                    fetch(API_ENDPOINTS.SKILL, { method: 'GET', Authorization: `Bearer ${token}` }),
+                    fetch(API_ENDPOINTS.SKILL_CATEGORY, { method: 'GET' }),
+                    fetch(API_ENDPOINTS.EXPERIENCE, { method: 'GET' }),
+                    fetch(API_ENDPOINTS.EXP_ROLE, { method: 'GET' })
                 ]);
 
                 const skillsData = await skillsResponse.json();
@@ -90,7 +91,7 @@ const AddProject = () => {
         const status = formData.get('status');
         const token = localStorage.getItem('token');
 
-        fetch('http://localhost:8080/api/v1/project', {
+        fetch(API_ENDPOINTS.PROJECT, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,

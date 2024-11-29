@@ -19,27 +19,3 @@ const Skills = () => {
 };
 
 export default Skills;
-
-//test data
-const skills = [
-    {
-        name: "JavaScript",
-        yoe: 3,
-    },
-    {
-        name: "React",
-        yoe: 2,
-    },
-    {
-        name: "Python",
-        yoe: 1,
-    },
-    {
-        name: "Java",
-        yoe: 2,
-    },
-    {
-        name: "C++",
-        yoe: 1,
-    },
-];

@@ -1,5 +1,6 @@
 import React from "react";
 import Select from 'react-select';
+import API_ENDPOINTS from "../../config/api";
 
 const AddSkill = () => {
     const [error, setError] = React.useState('');
@@ -9,7 +10,7 @@ const AddSkill = () => {
     const [selectedCategories, setSelectedCategories] = React.useState([]);
 
     React.useEffect(() => {
-        fetch(`http://localhost:8080/api/v1/skillCategory`, {
+        fetch(API_ENDPOINTS.SKILL_CATEGORY, {
             method: 'GET',
         })
             .then((response) => {
@@ -42,7 +43,7 @@ const AddSkill = () => {
         const end = formData.get('end');
         const token = localStorage.getItem('token');
 
-        fetch(`http://localhost:8080/api/v1/skills`, {
+        fetch(API_ENDPOINTS.SKILL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

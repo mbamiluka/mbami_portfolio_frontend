@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import API_ENDPOINTS from "../config/api";
 
 // Custom hook to fetch skills from the backend using fetch instead of axios
 const useGetSkills = () => {
@@ -9,7 +10,7 @@ const useGetSkills = () => {
   useEffect(() => {
     const fetchSkills = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/v1/skills');
+        const response = await fetch(API_ENDPOINTS.SKILL);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

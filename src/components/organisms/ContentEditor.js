@@ -3,6 +3,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import Select from 'react-select';
 import axios from 'axios';
+import API_ENDPOINTS from '../../config/api';
 
 const ContentEditor = () => {
     const [content, setContent] = useState(''); // Keep track of editor content
@@ -13,7 +14,7 @@ const ContentEditor = () => {
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/v1/project');
+                const response = await axios.get(API_ENDPOINTS.PROJECT);
                 setProjects(response.data);
             } catch (error) {
                 console.error('Error fetching projects:', error);
@@ -32,7 +33,7 @@ const ContentEditor = () => {
         formData.append('file', file);
 
         try {
-            const response = await axios.post('http://localhost:8080/api/v1/images/upload', formData, {
+            const response = await axios.post(API_ENDPOINTS.IMAGE_UPLOAD, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
@@ -72,7 +73,7 @@ const ContentEditor = () => {
         return;
     }
     try {
-        const response = await axios.post('http://localhost:8080/api/v1/contents', {
+        const response = await axios.post(API_ENDPOINTS.CONTENT, {
             name: event.target.name.value,
             contentType: 'text/html',
             content,

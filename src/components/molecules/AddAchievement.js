@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
+import API_ENDPOINTS from '../../config/api';
 
 const AddAchievement = () => {
     const [expRoles, setExpRoles] = useState([]);
@@ -7,7 +8,7 @@ const AddAchievement = () => {
     const [msg, setMsg] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/v1/expRole', {
+        fetch(API_ENDPOINTS.EXP_ROLE, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -16,16 +17,11 @@ const AddAchievement = () => {
         .then(response => response.json())
         .then(data => {
             setExpRoles(data);
-            console.log(data);
         })
         .catch(err => {
             console.log(err);
         });
     }, []);
-
-    useEffect(() => {
-        console.log(selectedRole);
-    }, [selectedRole]);
 
     const handleRoleChange = (selectedRole) => {
         setSelectedRole({id:selectedRole.value});
@@ -45,7 +41,7 @@ const AddAchievement = () => {
             achievementExpRole: selectedRole,
         };
 
-        fetch('http://localhost:8080/api/v1/achievement', {
+        fetch(API_ENDPOINTS.ACHIEVEMENT, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -55,7 +51,6 @@ const AddAchievement = () => {
         .then(response => response.json())
         .then(data => {
             setMsg(data.msg);
-            console.log(data);
         })
         .catch(err => {
             console.log(err);

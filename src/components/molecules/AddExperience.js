@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Select from 'react-select';
+import API_ENDPOINTS from "../../config/api";
 
 const AddExperience = () => {
     const [msg, setMsg] = useState('');
@@ -7,7 +8,7 @@ const AddExperience = () => {
     const [selectedExpType, setSelectedExpType] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/v1/expTypes', {
+        fetch(API_ENDPOINTS.EXP_TYPE, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -38,7 +39,7 @@ const AddExperience = () => {
             startDate: formData.get('start'),
             expType: selectedExpType
         };
-        fetch('http://localhost:8080/api/v1/experience', {
+        fetch(API_ENDPOINTS.EXPERIENCE, {
             method: 'POST',
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('token'),

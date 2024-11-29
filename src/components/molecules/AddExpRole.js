@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Select from 'react-select';
+import API_ENDPOINTS from '../../config/api';
 
 const AddExpRole = () => {
     const [experiences, setExperiences] = useState([]);
@@ -7,14 +8,11 @@ const AddExpRole = () => {
     const [msg, setMsg] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/v1/experience')
+        fetch(API_ENDPOINTS.EXPERIENCE)
         .then(response => response.json())
         .then(data => setExperiences(data));
     }, []);
 
-    useEffect(() => {
-        console.log(selectedExperience);
-    }, [selectedExperience]);
 
     const handleExperienceChange = (selectedExperience) => {
         setSelectedExperience({
@@ -30,7 +28,7 @@ const AddExpRole = () => {
             endDate: formData.get('end'),
             roleExperience: selectedExperience
         };
-        fetch('http://localhost:8080/api/v1/expRole', {
+        fetch(API_ENDPOINTS.EXP_ROLE, {
             method: 'POST',
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('token'),

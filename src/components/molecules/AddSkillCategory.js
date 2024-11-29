@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import API_ENDPOINTS from "../../config/api";
 
 const AddSkillCategory = () => {
-    const apiUrl = process.env.REACT_APP_MBAMI_PORTFOLIO_BACKEND_URL_DEVELOPMENT
+    const apiUrl = process.env.REACT_APP_MBAMI_PORTFOLIO_BACKEND_URL;
 
     const [msg, setMsg] = useState('');
 
@@ -11,10 +12,6 @@ const AddSkillCategory = () => {
         }, 2000);
     }, [msg]);
 
-    useEffect(() => {
-        console.log('apiUrl:', apiUrl);
-    }
-    , []);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -23,7 +20,7 @@ const AddSkillCategory = () => {
         const data = {
             name: categName
         };
-        fetch(`${apiUrl}/api/v1/skillCategory`, {
+        fetch(API_ENDPOINTS.SKILL_CATEGORY, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

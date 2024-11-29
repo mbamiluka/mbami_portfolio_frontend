@@ -1,4 +1,5 @@
 import React from "react";
+import API_ENDPOINTS from "../../config/api";
 
 const AddExpType = () => {
     const apiUrl = "http://localhost:8080";
@@ -10,7 +11,7 @@ const AddExpType = () => {
         const data = {
             name: name
         };
-        fetch(`${apiUrl}/api/v1/expType`, {
+        fetch(`${API_ENDPOINTS.EXP_TYPE}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
+import API_ENDPOINTS from '../config/api';
 
 const AuthContext = createContext();
 
@@ -10,7 +11,7 @@ export const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const storedToken = localStorage.getItem('token');
-        const tokenIsValid = fetch('http://localhost:8080/auth/validate', {
+        const tokenIsValid = fetch(API_ENDPOINTS.VALIDATE, {
             headers: {
                 Authorization: `Bearer ${storedToken}`,
             },
@@ -43,7 +44,7 @@ export const AuthProvider = ({ children }) => {
 
         setLoading(true);
         try {
-            const response = await fetch('http://localhost:8080/auth/signin', {
+            const response = await fetch(API_ENDPOINTS.SIGNIN, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

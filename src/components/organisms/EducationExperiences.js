@@ -10,7 +10,6 @@ const EducationExperiences = ({ experience }) => {
     useEffect(() => {
         if (experiences) {
             setEducationExperiences(experiences);
-            console.log(experiences);
         }
     }, [experiences]);
 

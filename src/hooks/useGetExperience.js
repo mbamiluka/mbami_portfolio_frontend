@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import API_ENDPOINTS from "../config/api";
 
-const apiUrl = process.env.REACT_APP_MBAMI_PORTFOLIO_BACKEND_URL_DEVELOPMENT;
+//const apiUrl = process.env.REACT_APP_MBAMI_PORTFOLIO_BACKEND_URL;
 
 const useGetExperiences = (type) => {
 	const [experiences, setExperiences] = useState([]);
@@ -10,14 +11,12 @@ const useGetExperiences = (type) => {
 	useEffect(() => {
 		const fetchExperiences = async () => {
 			try {
-				const response = await fetch(`${apiUrl}/api/v1/experience?expType=${type}`);
+				const response = await fetch(`${API_ENDPOINTS.EXPERIENCE}?expType=${type}`);
 				if (!response.ok) {
 					throw new Error("Network response was not ok");
 				}
 				const data = await response.json();
 				setExperiences(data);
-				console.log(data);
-				console.log(`${apiUrl}/api/v1/experience?expType=${type}`);
 			} catch (error) {
 				setError(error);
 			} finally {
