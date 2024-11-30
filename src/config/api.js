@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.REACT_APP_MBAMI_PORTFOLIO_BACKEND_URL;
+const API_BASE_URL = "https://mbamiluka010-production.up.railway.app"
 
 const API_ENDPOINTS = {
     AUTH: `${API_BASE_URL}/auth`,
@@ -9,7 +9,7 @@ const API_ENDPOINTS = {
     EXP_TYPE: `${API_BASE_URL}/api/v1/expType`,
     ACHIEVEMENT: `${API_BASE_URL}/api/v1/achievement`,
     PROJECT: `${API_BASE_URL}/api/v1/project`,
-    EXPERIENCE: `${API_BASE_URL}/api/v1/education`,
+    EXPERIENCE: `${API_BASE_URL}/api/v1/experience`,
     SKILL: `${API_BASE_URL}/api/v1/skills`,
     SKILL_CATEGORY: `${API_BASE_URL}/api/v1/skillCategory`,
     IMAGE_UPLOAD: `${API_BASE_URL}/api/v1/images/upload`,

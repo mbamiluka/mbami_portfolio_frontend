@@ -9,6 +9,7 @@ const Footer = () => {
             <Link to="/experience">Experience</Link>
             <Link to="/project">Projects</Link>
             <Link to="/contact">Contact</Link>
+            <Link to="/admin">Admin</Link>
         </div>
         <p style={{marginBottom:"3px"}}>© 2021 Mbami Luka | Last Updated June 2024.</p>
     </div>

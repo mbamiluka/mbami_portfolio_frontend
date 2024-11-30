@@ -72,6 +72,45 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
+    const signUp = async (fName, lName, username, password, email, isActive, authRole) => {
+        if (!username || !password) {
+            setError('Please fill in all fields');
+            return false;
+        }
+
+        setLoading(true);
+        try {
+            const response = await fetch(API_ENDPOINTS.SIGNUP, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ fName, lName, username, password,
+                        email, isActive, authRole
+                }),
+            });
+            if (response.ok) {
+                const data = await response.json();
+                const tokenExpiration = new Date().getTime() + 10 * 60 * 60 * 1000; // 10 hours
+                localStorage.setItem('token', data.token);
+                localStorage.setItem('tokenExpiration', tokenExpiration);
+                setToken(data.token);
+                setIsAuthenticated(true);
+                setError(null);
+                return true;
+            } else {
+                setError('Username already exists');
+                return false;
+            }
+        }
+        catch (error) {
+            setError('Something went wrong');
+            return false;
+        } finally {
+            setLoading(false);
+        }
+    }
+
     const logout = () => {
         localStorage.removeItem('token');
         localStorage.removeItem('tokenExpiration');

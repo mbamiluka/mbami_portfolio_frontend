@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import API_ENDPOINTS from '../config/api';
 
 const LoginPage = () => {
     const { login, loading, error, isAuthenticated } = useAuth();
@@ -21,6 +22,10 @@ const LoginPage = () => {
             navigate('/admin');
         }
     }, [isAuthenticated, navigate]);
+
+    useEffect(() => {
+        console.log('API Endpoint',API_ENDPOINTS.AUTH);
+    } , []);
 
     return (
         <div>
