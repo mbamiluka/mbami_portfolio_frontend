@@ -22,10 +22,6 @@ const ContentEditor = () => {
         }; fetchProjects();
     }, []);
 
-    useEffect(() => {
-        console.log(selectedProject);
-        console.log(content);
-    }, [selectedProject, content]);
 
     // Function to handle image uploads
     const handleImageUpload = async (file) => {

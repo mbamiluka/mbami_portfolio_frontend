@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Select from 'react-select';
 import API_ENDPOINTS from "../../config/api";
 
@@ -21,7 +21,7 @@ const AddSkill = () => {
                 return response.json();
             })
             .then((data) => {
-                setSkillCategories(Object.values(data));
+                setSkillCategories(Object.values(data)[0]);
                 setIsLoaded(true);
             })
             .catch((error) => {
@@ -29,6 +29,13 @@ const AddSkill = () => {
             });
     }
     , []);
+
+    useEffect(() => {
+        console.log('API Endpoint',API_ENDPOINTS.SKILL_CATEGORY);
+        console.log(
+            'Skill Categories', skillCategories
+        )
+    } , [skillCategories]);
 
     const handleSkillCategoryChange = (selectedOption) => {
         const selected = selectedOption.map((option) => option);

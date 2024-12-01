@@ -5,7 +5,6 @@ import useGetSkills from "../../hooks/useGetSkills";
 
 const Skills = () => {
     const { skills, isLoading, error } = useGetSkills();
-    console.log(skills);
     return (
         <section>
             <h1 className="Heading">Technical Skills</h1>
