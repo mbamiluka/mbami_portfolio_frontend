@@ -23,7 +23,7 @@ const AddProject = () => {
         const fetchData = async () => {
             try {
                 const [skillsResponse, categoriesResponse, expResponse, expRoleResp] = await Promise.all([
-                    fetch(API_ENDPOINTS.SKILL, { method: 'GET', Authorization: `Bearer ${token}` }),
+                    fetch(API_ENDPOINTS.SKILL, { method: 'GET', headers: { 'Authorization': `Bearer ${token}` } }),
                     fetch(API_ENDPOINTS.SKILL_CATEGORY, { method: 'GET' }),
                     fetch(API_ENDPOINTS.EXPERIENCE, { method: 'GET' }),
                     fetch(API_ENDPOINTS.EXP_ROLE, { method: 'GET' })
@@ -35,7 +35,7 @@ const AddProject = () => {
                 const expRoleData = await expRoleResp.json();
 
                 setSkills(skillsData)
-                setCategories(Object.values(categoriesData));
+                setCategories(Object.values(categoriesData)[0]);
                 setExperiences(Object.values(expData));
                 setExpRoles(expRoleData);
                 setIsLoaded(true);
