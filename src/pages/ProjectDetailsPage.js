@@ -11,8 +11,7 @@ import ProjectSideBarDetails from "../components/molecules/ProjectSideBarDetails
 import SourceCode from "../components/atoms/SourceCode";
 import ProjectDescription from "../components/molecules/ProjectDescription";
 import ProjectContentDisplay from "../components/organisms/ProjectContentDisplay";
-
-const apiUrl = process.env.REACT_APP_MBAMI_PORTFOLIO_BACKEND_URL_DEVELOPMENT;
+import API_ENDPOINTS from "../config/api";
 
 const ProjectDetailsPage = () => {
     const { id } = useParams();
@@ -20,7 +19,7 @@ const ProjectDetailsPage = () => {
     try {
         useEffect(() => {
             const fetchProjectDetails = async () => {
-                const response = await fetch(`${apiUrl}/api/v1/project/${id}`);
+                const response = await fetch(`${API_ENDPOINTS.PROJECT}/${id}`);
                 const data = await response.json();
                 setProject(data);
             };
