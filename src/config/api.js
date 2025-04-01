@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://mbamiluka010-production.up.railway.app"
+const API_BASE_URL = "https://mbamiluka0-1-0.onrender.com"
 
 const API_ENDPOINTS = {
     AUTH: `${API_BASE_URL}/auth`,
