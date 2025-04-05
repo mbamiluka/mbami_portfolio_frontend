@@ -5,18 +5,22 @@ const Achievements = ({ achievements }) => {
     return (
         <ul>
             {achievements.map((achievement, index) => (
-                <Collapsible trigger={achievement.achievementDescr}
-                    triggerTagName="li"
-                    key={index}
-                    contentContainerTagName='p'
-                >
-                    {achievement.achievementFullDescr}
-                </Collapsible>
+                <li key={index} className="collapsibleItem">
+                    <Collapsible 
+                        trigger={
+                            <div className="collapsibleTriggerContent">
+                                <span>{achievement.achievementDescr}</span>
+                                <span className="plusSymbol">+</span>
+                            </div>
+                        }
+                        contentContainerTagName="p"
+                    >
+                        <p>{achievement.achievementFullDescr}</p>
+                    </Collapsible>
+                </li>
             ))}
         </ul>
     )
 }
-const collapsibleStyle = {
-    'paddingLeft': '1px',
-}
+
 export default Achievements

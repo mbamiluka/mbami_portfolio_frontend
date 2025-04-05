@@ -7,6 +7,7 @@ import ProjectsPage from './pages/ProjectsPage';
 import ProjectDetailsPage from './pages/ProjectDetailsPage';
 import LoginPage from './pages/LoginPage';
 import AdminHomePage from './pages/AdminHomePage';
+import AdminSignupPage from './pages/AdminSignupPage';
 import PrivatePage from './pages/PrivatePage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
@@ -29,6 +30,7 @@ function App() {
             <Route path='/project' element={<ProjectsPage />} />
             <Route path='/project/:id' element={<ProjectDetailsPage />} />
             <Route path='/signin' element={<LoginPage />} />
+            <Route path='/signup' element={<AdminSignupPage />} />
             <Route path='/admin' element={<PrivatePage element={AdminHomePage} />} />
         </Routes>
       </Router>

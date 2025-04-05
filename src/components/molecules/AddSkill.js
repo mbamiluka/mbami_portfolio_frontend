@@ -30,12 +30,6 @@ const AddSkill = () => {
     }
     , []);
 
-    useEffect(() => {
-        console.log('API Endpoint',API_ENDPOINTS.SKILL_CATEGORY);
-        console.log(
-            'Skill Categories', skillCategories
-        )
-    } , [skillCategories]);
 
     const handleSkillCategoryChange = (selectedOption) => {
         const selected = selectedOption.map((option) => option);
