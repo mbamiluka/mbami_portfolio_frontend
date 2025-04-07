@@ -439,6 +439,11 @@ ul .Collapsible li:hover{
   padding-bottom: 60px;
 }
 
+.experienceItem .left > p {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
 #asDeg{
   padding-top: 0%;
 }

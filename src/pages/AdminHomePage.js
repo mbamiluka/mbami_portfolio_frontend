@@ -14,6 +14,7 @@ import ProjectDetails from "../components/molecules/ProjectDetails";
 import AddExperience from "../components/molecules/AddExperience";
 import AddAchievement from "../components/molecules/AddAchievement";
 import ContentEditor from "../components/organisms/ContentEditor";
+import CloudinaryImg from "../components/molecules/CloudinaryImg";
 
 
 const AdminHomePage = () => {
@@ -30,6 +31,7 @@ const AdminHomePage = () => {
                 <AddProject/>
                 <AddAchievement/>
                 <ContentEditor/>
+                <CloudinaryImg publicId="csqg5flrts0xvhvz8khr"/>
             </MainContent>
             <RightContent>
                 <Tags tags={["Admin", "Home", "Page"]}/>

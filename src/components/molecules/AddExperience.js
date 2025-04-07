@@ -37,6 +37,7 @@ const AddExperience = () => {
         const data = {
             institution: formData.get('name'),
             startDate: formData.get('start'),
+            endDate: formData.get('end'),
             expType: selectedExpType
         };
         fetch(API_ENDPOINTS.EXPERIENCE, {
