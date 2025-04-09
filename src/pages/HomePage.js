@@ -11,6 +11,7 @@ import WorkExperiences from '../components/organisms/WorkExperiences';
 import EducationExperiences from '../components/organisms/EducationExperiences';
 import Projects from '../components/organisms/Projects';
 import SideImage from '../components/atoms/SideImage';
+import HealthCheck from '../components/atoms/HealthCheck';
 
 
 function HomePage() {
@@ -23,6 +24,7 @@ function HomePage() {
                 <EducationExperiences />
                 <Skills />
                 <Projects />
+                <HealthCheck />
             </MainContent>
             <RightContent>
                 <SideImage />

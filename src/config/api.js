@@ -14,6 +14,7 @@ const API_ENDPOINTS = {
     SKILL_CATEGORY: `${API_BASE_URL}/api/v1/skillCategory`,
     IMAGE_UPLOAD: `${API_BASE_URL}/api/v1/images/upload`,
     CONTENT: `${API_BASE_URL}/api/v1/contents`,
+    HEALTH_CHECK: `${API_BASE_URL}/health`,
     
 };
 
